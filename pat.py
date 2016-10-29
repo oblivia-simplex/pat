@@ -23,7 +23,10 @@ def make_pat(length, find=None):
             return out[:length]
           else:
             return 'NOT FOUND'
-  return out+make_pat(length-count, find=find)
+  try:
+    return out+make_pat(length-count, find=find)
+  except RecursionError:
+    return out+'...'
 
 def usage():
   print('Usage: {:s} (<length>|<string to find>)'.
