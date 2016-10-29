@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+from __future__ import print_function
 import sys
 
 upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -14,9 +15,8 @@ def pat(length, find=None):
       for n in digit:
         chunk = u+l+n
         out += chunk
-        if find is not None:
-          if find in out[-(2*len(find)):]:
-            return out.index(find)
+        if find is not None and find in out[-(2*len(find)):]:
+          return out.index(find)
         count += 3
         if count >= length:
           if find is None:
