@@ -6,7 +6,7 @@ upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 lower = upper.lower()
 digit = '0123456789'
 
-def make_pat(length, find=None):
+def pat(length, find=None):
   count   = 0
   out     = ''
   for u in upper:
@@ -24,7 +24,7 @@ def make_pat(length, find=None):
           else:
             return 'NOT FOUND'
   try:
-    return out+make_pat(length-count, find=find)
+    return out+pat(length-count, find=find)
   except RecursionError:
     return out+'...'
 
@@ -35,10 +35,17 @@ def usage():
 
 if __name__ == '__main__':
   try:
+    end = '\n'
+    if len(sys.argv) == 3:
+      if sys.argv[1] == '-n':
+        end = ''
+        sys.argv[1] = sys.argv[2]
+      elif sys.argv[2] == '-n':
+        end = ''
     length = int(sys.argv[1])
-    print(make_pat(length))
+    print(pat(length), end=end)
   except (ValueError):
-    print(make_pat(length=20280, find=sys.argv[1]))
+    print(pat(length=20280, find=sys.argv[1]))
   except (IndexError):
     usage()
 
