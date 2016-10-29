@@ -17,7 +17,7 @@ def main(length):
           return out[:length]
 
 def usage():
-  print('Usage: {:s} <length>')
+  print('Usage: {:s} <length>'.format(sys.argv[0]))
 
 
 if __name__ == '__main__':
