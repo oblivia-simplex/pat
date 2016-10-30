@@ -22,7 +22,6 @@ def pat(length):
   except RecursionError:
     return out+'...'
 
-
 def find(p):
   adj = 0
   u, l, d = '', '', ''
