@@ -20,12 +20,12 @@ buffer overflow picnics.
 
 To generate a pattern of, say, 500 characters, run
 
-$ pat 100
+$ ./pat.py 100
 
 To find the offset in pat's pattern of the string 'm7Am', for
 example, run
 
-$ pat m7Am
+$ ./pat.py m7Am
 
 Note that the string should be at least three characters long
 for pat to return useful information.
@@ -55,7 +55,7 @@ real    0m3.154s
 user    0m2.720s
 sys     0m0.350s
 
-$ time pat m7Am
+$ time ./pat.py m7Am
 382
 
 real    0m0.049s
